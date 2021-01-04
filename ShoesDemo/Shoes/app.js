@@ -28,7 +28,7 @@ async function getProdID(_index) {
 
 }
 
-let money = 0;
+
 
 async function getAllProdID(_index) {
     contract.methods.getAllProdId(_index).call({}).then(
@@ -37,12 +37,20 @@ async function getAllProdID(_index) {
             $("#pitem" + _index).html(result.r_token);
             $("#tokenIndex" + _index).html(result.r_index);
             $("#price" + _index).html(result.r_price);
-            money = r_price
+        
         }
     );
 
 }
 
+// async function getmoney(_index) {
+//     contract.methods.getprices(_index).call({}).then(
+//         function (result) {
+//             console.log(result)
+//         }
+//     );
+
+// }
 
 
 async function getbuyer(_index) {
@@ -157,7 +165,12 @@ function sendBtn(i) {
 
 function buy(o) {
     console.log("buy");
-    contract.methods.buy(o+1).send({ from: accounts[0] , value:111}).then(
+    contract.methods.getprices(o).call({}).then(
+        function (result) {
+            console.log(result)
+  
+    let money = result
+    contract.methods.buy(o+1).send({ from: accounts[0] , value:money}).then(
         function (result) {
         if (result.status) {
             alert("购买成功")
@@ -167,6 +180,8 @@ function buy(o) {
         console.log(result)
             // $("#load_ci_img").hide();
         })
+    }
+    );
 }
 
 function accept(s) {
@@ -866,6 +881,25 @@ var contractAbi = [
 	{
 		"inputs": [
 			{
+				"internalType": "uint256",
+				"name": "_Index",
+				"type": "uint256"
+			}
+		],
+		"name": "getprices",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "r_price",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
 				"internalType": "string",
 				"name": "_name",
 				"type": "string"
@@ -898,7 +932,7 @@ var contractAbi = [
 
 // 0xa02A64208d3D9A2ef85b2fDea276893f7FFe7817  本地
 //0x7225e1eeDF4B2BEBcEb1F1E157BE3dC6189523EF rinkeby
-var contract = new web3.eth.Contract(contractAbi, "0x8Cd0F64B137d6b108ba70c229373655549581F89");
+var contract = new web3.eth.Contract(contractAbi, "0x50Cf45c6167BbbaD29D44F37A0339e9256FA0CfE");
 
 console.log("contract", contract)
 
