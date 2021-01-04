@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="web3.min.js"></script>
+    <link rel="stylesheet" href="app.css" />
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>基于区块链的厂家直销的商品鞋交易
+    </title>
+</head>
+
+<body>
+<h2>基于区块链的厂家直销的商品鞋交易</h2>
+<h3>快递界面</h3>
+    ERC合约地址: <span class="ErcAddress"></span><button id="Btn_getErc721">获取合约地址</button>
+    <button class="enableEthereumButton">启用以太坊</button>
+    <h5>账户: <span class="showAccount"></span>(您是快递)</h5>
+    <hr />
+    快递数量:<span id="MyBalance"></span>
+    <div id="box"></div>
+    <hr />
+    <!-- 快递数量:<span id="express"></span>
+    <div id="kuaidi"></div>
+    <hr /> -->
+    总生产量:<span class="txt_getTotalSupply"></span><button id="Btn_getTotalSupply">获得总生产量</button>
+    <hr />
+    授权合约<button id="Btn_shouquan">授权</button>
+
+    <script type="text/javascript" src="app.js"></script>
+</body>
+
+</html>
+
