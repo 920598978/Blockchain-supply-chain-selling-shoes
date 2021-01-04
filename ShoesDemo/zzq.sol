@@ -91,6 +91,11 @@ contract Zzq is owned {
         uint256 _token = condi.tokenOfOwnerByIndex(address(this), _Index);
         return (condi.tokenURI(_token), _token, condi.getprice(_token));
     }
+    
+    function getprices(uint256 _Index) public view returns (uint256 r_price) {
+        uint256 _token = condi.tokenOfOwnerByIndex(address(this), _Index);
+        return (condi.getprice(_token));
+    }
  
     function ErcAddress() public view returns (zzq721) {
         return condi;
