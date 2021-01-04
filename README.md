@@ -306,7 +306,7 @@ contract owned {
 
 文本代码：
 
-```
+```solidity
 function produce(string memory _name,uint256 _price) public onlyOwner {
 
 ​    condi.awardItem(address(this), _name, _price);
@@ -332,7 +332,7 @@ function produce(string memory _name,uint256 _price) public onlyOwner {
 
 文本代码：
 
-```
+```solidity
 function getTotalSupply() public view returns (uint256) {
 
 ​    return condi.totalSupply();
@@ -348,7 +348,7 @@ function getTotalSupply() public view returns (uint256) {
 
 文本代码：
 
-```
+```solidity
 function buy(uint256 tokenId) public payable returns(bool) {
 
 ​    require(msg.value == condi.getprice(tokenId));
@@ -368,7 +368,7 @@ function buy(uint256 tokenId) public payable returns(bool) {
 
 文本代码：
 
-```
+```solidity
 function accept(uint256 tokenId) public {
 
    address(uint256(0x50CAB181DAf1fca71f3BDe3AA65C7F2c769B0B4D)).transfer(condi.getprice(tokenId));
