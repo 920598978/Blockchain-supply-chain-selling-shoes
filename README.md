@@ -438,7 +438,7 @@ function accept(uint256 tokenId) public {
 
   如图： ![](https://i.loli.net/2021/01/04/16h83avYFoQ5zZE.png)
 
-  这时完整交易流程已经完成，所有交易以及操作都是在本人本地私链上运行。同时我也部署在了Ropsten测试网络中，部署Hash: 0xc4378a162C22748B0396a43A00dC4f86A7D830B1
+  这时完整交易流程已经完成，所有交易以及操作都是在本人本地私链上运行。同时我也部署在了Ropsten测试网络中，部署Hash:0x261ca102f455345f0A4371cB6518480B6324747a ; 0x0eDF43349Ea20f6190769ce40151e96F7f1fe949
 
 ## 结语
 
